@@ -1,0 +1,4 @@
+{
+  "ignore": ["./www", "./migrations", "*.test.js"],
+  "ext": "js"
+}

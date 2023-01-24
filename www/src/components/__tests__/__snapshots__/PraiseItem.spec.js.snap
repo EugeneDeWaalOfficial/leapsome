@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PraiseItem.vue renders correctly 1`] = `
+<div
+  class="praise-item"
+>
+  <b-avatar
+    size="5rem"
+    text="BS"
+    variant="secondary"
+  />
+   
+  <b-icon
+    class="caret"
+    icon="caret-right-fill"
+    scale="2"
+  />
+   
+  <b-avatar
+    size="5rem"
+    text="LL"
+    variant="secondary"
+  />
+   
+  <br />
+  <br />
+   
+  <p>
+    From Billie to Lee
+  </p>
+   
+  <hr />
+   
+  <p>
+    Great job!
+  </p>
+   
+  <hr />
+</div>
+`;

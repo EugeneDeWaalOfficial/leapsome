@@ -1,0 +1,72 @@
+{
+  "name": "leapsome-interview",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "author": "",
+  "scripts": {
+    "postinstall": "npm run www:install",
+    "start": "forever app.js",
+    "start:watch": "nodemon app.js",
+    "dev": "npm-run-all --parallel start:watch www:dev",
+    "lint": "eslint \"**/*.js\" && npm run www:lint",
+    "lint:staged": "eslint --fix",
+    "format": "prettier --write",
+    "build": "NODE_ENV=production npm run www:build",
+    "migrate:up": "migrate-mongo up",
+    "migrate:down": "migrate-mongo down",
+    "migrate:status": "migrate-mongo status",
+    "test": "npm run test:be && npm run test:fe",
+    "test:be": "nyc --reporter=lcov --reporter=text mocha './{,!(node_modules),!(www/node_modules)/**}/*.test.js'",
+    "test:fe": "npm run www:test",
+    "www:install": "cd www && npm ci",
+    "www:dev": "cd www && npm run dev",
+    "www:build": "cd www && npm run build",
+    "www:lint": "cd www && npm run lint",
+    "www:lint:staged": "cd www && npm run lint",
+    "www:test": "cd www && npm run test"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "forever": "^3.0.4",
+    "helmet": "^4.6.0",
+    "migrate-mongo": "^8.2.3",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.8",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-mocha": "^8.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.4.0",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.2",
+    "supertest": "^4.0.2"
+  },
+  "keywords": [],
+  "license": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{,!(www)/**/}*.js": [
+      "npm run format",
+      "npm run lint:staged"
+    ],
+    "./www/**/*.{js,vue}": [
+      "npm run www:lint:staged"
+    ]
+  }
+}

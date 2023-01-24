@@ -1,0 +1,10 @@
+{
+  "include": ["./www/src/**/*"],
+  "compilerOptions": {
+    "baseUrl": "www",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

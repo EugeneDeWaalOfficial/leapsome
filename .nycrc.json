@@ -1,0 +1,21 @@
+{
+  "all": true,
+  "include": ["**/*.js"],
+  "exclude": [
+    "app.js",
+    "migrate-mongo-config.js",
+    "coverage/**/*.js",
+    "docker/**/*.js",
+    "migrations/**/*.js",
+    "node_modules/**/*.js",
+    "www/**/*.js",
+    "**/*.spec.js",
+    "**/*.test.js"
+  ],
+  "watermarks": {
+    "lines": [50, 80],
+    "functions": [50, 80],
+    "branches": [50, 80],
+    "statements": [50, 80]
+  }
+}

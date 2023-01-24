@@ -1,0 +1,30 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2020": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": ["eslint:recommended", "plugin:mocha/recommended", "prettier"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "plugins": ["mocha"],
+    "rules": {
+        "no-console": "error",
+        "no-warning-comments": "warn",
+        "no-mixed-spaces-and-tabs": 0,
+        "mocha/no-exclusive-tests": "error",
+        "mocha/no-hooks-for-single-case": 0,
+        "mocha/no-setup-in-describe": 0,
+        "mocha/no-mocha-arrows": 0,
+        "mocha/no-sibling-hooks": 0,
+        "mocha/no-skipped-tests": "off"
+    }
+}

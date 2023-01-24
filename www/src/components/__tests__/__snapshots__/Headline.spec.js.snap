@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headline.vue renders title and button text when passed 1`] = `
+<div
+  class="headline"
+>
+  <div
+    class="title-wrapper"
+  >
+    <h2
+      class="title"
+    >
+      Some Title
+    </h2>
+     
+    <b-button
+      class="button"
+      variant="info"
+    >
+      Some Button
+    </b-button>
+  </div>
+   
+  <hr />
+</div>
+`;
