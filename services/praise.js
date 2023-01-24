@@ -44,6 +44,10 @@ async function create({ sender, receiver, content }) {
     throw new BadRequestError("Missing receiver");
   }
 
+  if (!content) {
+    throw new BadRequestError("Missing content");
+  }
+
   const praise = await Praise.create({
     sender,
     receiver,
