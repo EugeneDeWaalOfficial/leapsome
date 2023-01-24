@@ -1,4 +1,4 @@
-var db = connect("root:example@127.0.0.1:27017/admin"); // eslint-disable-line no-undef
+var db = connect("mongodb://root:example@127.0.0.1:27017/admin"); // eslint-disable-line no-undef
 
 db = db.getSiblingDB("leapsome-interview");
 
